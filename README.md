@@ -3,6 +3,10 @@
 
 Very simple low-level nostr command line client, useful for debugging
 
+## Installation
+
+npm i -g https://github.com/earonesty/nostrcli
+
 ## Usage:
 
 ```
