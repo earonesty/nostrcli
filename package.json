@@ -1,6 +1,6 @@
 {
   "name": "nostrcli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "author": "Erik Aronesty <erik@q32.com>",
@@ -8,8 +8,8 @@
   "keywords": [
     "nostr"
   ],
-  "engines" : {
-    "node" : ">=12"
+  "engines": {
+    "node": ">=12"
   },
   "scripts": {
     "build": "yarn tsc",
