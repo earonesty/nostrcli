@@ -8,6 +8,9 @@
   "keywords": [
     "nostr"
   ],
+  "engines" : {
+    "node" : ">=12"
+  },
   "scripts": {
     "build": "yarn tsc",
     "test": "jest test"
