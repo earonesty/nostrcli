@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Erik Aronesty <erik@q32.com>",
+  "description": "nostr cli, helpful for debugging",
+  "keywords": [
+    "nostr"
+  ],
   "scripts": {
     "build": "yarn tsc",
     "test": "jest test"
