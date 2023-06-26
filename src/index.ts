@@ -16,6 +16,7 @@ interface Config {
 interface Opts extends Config {
   debug?: boolean,
   list?: boolean,
+  limit?: number,
   publish?: boolean,
   kind: number[],
   tags?: string[][],
@@ -32,6 +33,7 @@ async function main() {
     .option("-d, --debug", "debug")
     .option("-c, --config <value>", "use config", "~/.config/nostrcli")
     .option("-l, --list", "list events")
+    .option("-n, --limit <number>", "limit")
     .option("-p, --publish", "publish event")
     .option("-k, --kind <number...>", "kind", [1])
     .option("-a, --author <value...>", "one or more author keys to filer")
@@ -95,6 +97,10 @@ async function main() {
     if (opts.kind) {
         opts.kind = opts.kind.map((k:string)=>parseInt(k))
     }
+    
+    if (opts.limit) {
+        opts.limit = parseInt(opts.limit)
+    }
   
     if (opts.debug) console.warn("options", opts)
 
@@ -117,7 +123,10 @@ export async function listEvents(opts: Opts) {
   try {
       const f: Filter<number> = {}
       f.kinds = opts.kind
-      
+     
+      if (opts.limit)
+          f.limit = opts.limit
+
       if (!opts.tags)
         opts.tags = []
       
