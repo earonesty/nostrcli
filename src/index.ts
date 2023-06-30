@@ -123,6 +123,7 @@ export async function listEvents(opts: Opts) {
   try {
       const f: Filter<number> = {}
       f.kinds = opts.kind
+      f.authors = opts.author
      
       if (opts.limit)
           f.limit = opts.limit
