@@ -17,6 +17,7 @@ interface Opts extends Config {
   debug?: boolean,
   list?: boolean,
   limit?: number,
+  author?: string[],
   publish?: boolean,
   kind: number[],
   tags?: string[][],
