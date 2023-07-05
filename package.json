@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "commander": "^10.0.1",
+    "isomorphic-unfetch": "^4.0.2",
     "nostr-tools": "^1.11.1",
     "websocket-polyfill": "^0.0.3"
   },

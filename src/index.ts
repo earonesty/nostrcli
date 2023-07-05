@@ -3,7 +3,8 @@
 import * as fs from 'fs';
 import * as os from 'os';
 import "websocket-polyfill"
-import { Filter, SimplePool } from 'nostr-tools'
+import "isomorphic-unfetch"
+import { Filter, SimplePool, nip05 } from 'nostr-tools'
 const { Command } = require("commander");
 
 const program = new Command();
@@ -40,6 +41,7 @@ async function main() {
     .option("-a, --author <value...>", "one or more author keys to filer")
     .option("-t, --tag <values...>", "one or more key:value[,value...] tags")
     .option("-c, --content <value>", "content for publishing")
+    .option("-5, --nip05 <value>", "resolve nip05 name")
     .parse(process.argv);
 
     const opts = program.opts();
@@ -60,6 +62,11 @@ async function main() {
     }
     
     Object.assign(opts, cfg)
+
+    if (opts.nip05) {
+        console.log("query:", opts.nip05)
+        console.log(await nip05.queryProfile(opts.nip05))
+    }
 
     if (opts.addRelay) {
         if (!cfg.relays) cfg.relays = []
