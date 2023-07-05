@@ -25,6 +25,7 @@ Options:
   -a, --author <value...>  one or more author keys to filer
   -t, --tag <values...>    one or more key:value[,value...] tags
   -c, --content <value>    content for publishing
+  -5, --nip05 <value>      query for nip05 name
   -h, --help               display help for command
 ```
 
